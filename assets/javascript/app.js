@@ -9,3 +9,16 @@
                 // Player can't pick more than one answer
 // Time runs out
     // Display number of correct and incorrect questions
+    
+$(document).ready(function() {
+
+
+
+
+
+
+
+
+
+    
+})
