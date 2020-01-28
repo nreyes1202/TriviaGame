@@ -11,13 +11,25 @@
     // Display number of correct and incorrect questions
     
 $(document).ready(function() {
+    var countDown = 60000;
+    var correct = 0;
+    var incorrect = 0;
 
+    $
 
+    //function countDown () {
 
+        //number--;
+        //$("#timer").html("<h2>" + number + "Time Remaining" + "</h2>");
+        
+        //if (number === 0) {
 
+            //stop();
+            //alert("Time up!");
+        }
+    }
 
-
-
+    var 
 
 
     
