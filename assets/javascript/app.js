@@ -1,29 +1,67 @@
-// Timer will count down
-    // Add timer
-    // setInterval
-    //on 0, add Times' Up! alert
-// User will click on a choice for each question
-    // Add click events (or selector of some sort?)
-        //user will choose a, b, or c
-            //One of these is correct
-                // Player can't pick more than one answer
-// Time runs out
-    // Display number of correct and incorrect questions
     
 $(document).ready(function() {
     var countDown = 60000;
     var correct = 0;
     var incorrect = 0;
 
-    var myQuestions = [
+    var questions = [
+        {   
+            question: "In what part of New York did Vito Corleone grow up?",
+            answers: {
+                a: 'Hells Kitchen',
+                b: 'Little Italy',
+                c: 'Staten Island',
+            },
+            correctAnswer: 'b'
+        },
         {
-
-            
-
-
-
-
+            question: "In the Superman movies, what newspaper does Clark Kent Work for?",
+            answers: {
+                a: 'The Daily Planet',
+                b: 'The Daily Prophet',
+                c: 'The Daily Bugle',
+            }
+            correctAnswer: 'a'
+        },
+        {
+            question: "In the movie The Wizard of Oz, what did the Scarecrow want from the wizard?",
+            answers: {
+                a: 'a brain',
+                b: 'a heart',
+                c: 'courage',
+            }
+            correctAnswer: 'a'
+        },
+        {
+            question: "Which 1952 musical comedy tells the story of three performers making the transition from silent movies to talkies?",
+            answers: {
+                a: 'Singing in the Rain',
+                b: 'Monkey Business',
+                c: 'Jack and the Beanstalk',
+            }
+            correctAnswer: 'a'
+        },
+        {
+            question: "Which movie is famous for the quote 'There's no crying in baseball!'",
+            answers: {
+                a: 'The Sandlot',
+                b: 'Rookie of the Year',
+                c: 'A League of Their Own',
+            }
+            correctAnswer: 'c'
+        },
+        {
+            question: "What 90s movie was the first and only animated film to receive a Special Achievement Academy Award?",
+            answers: {
+                a: 'Beauty and the Beast',
+                b: 'Toy Story',
+                c: 'Aladdin',
+            }
+            correctAnswer: 'b'
         }
+
+
+        
 
 
 
