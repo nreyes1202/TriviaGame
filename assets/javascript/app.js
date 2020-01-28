@@ -15,22 +15,54 @@ $(document).ready(function() {
     var correct = 0;
     var incorrect = 0;
 
-    $
+    var myQuestions = [
+        {
 
-    //function countDown () {
+            
 
-        //number--;
-        //$("#timer").html("<h2>" + number + "Time Remaining" + "</h2>");
-        
-        //if (number === 0) {
 
-            //stop();
-            //alert("Time up!");
+
+
         }
+
+
+
+
+    ]
+
+
+
+
+
+    function generateTrivia (questions, triviaContainer, resultsContainer, submitButton)
+
+    function showQuestions (questions, triviaContainer){
+
+
+    } 
+
+    function showResults(questions, triviaContainer, resultsContainer){
+
+
+
     }
 
-    var 
+
+    showQuestions(questions, triviaContainer);
+
+
+
+    submitButton.onclick = function(){
+
+        showResults(questions, triviaContainer, resultsContainer);
+
+    }
+
+        
+        
+    })
+
+    
 
 
     
-})
