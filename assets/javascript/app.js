@@ -1,8 +1,5 @@
     
 $(document).ready(function() {
-    var countDown = 60000;
-    var correct = 0;
-    var incorrect = 0;
 
     var questions = [
         {   
@@ -59,42 +56,28 @@ $(document).ready(function() {
             }
             correctAnswer: 'b'
         }
+    ];
 
+    var countDown = 60000;
+    var correct = 0;
+    var incorrect = 0;
+    var unanswered = 0;
 
-        
+    function showQuestion (){
+        $('#trivia-questions').html(question[key].triviaquestions);
 
-
-
-
-    ]
-
-
-
-
-
-    function generateTrivia (questions, triviaContainer, resultsContainer, submitButton)
-
-    function showQuestions (questions, triviaContainer){
-
-
-    } 
-
-    function showResults(questions, triviaContainer, resultsContainer){
-
-
+        for (var i = 0; i < question[key].answers.length; i++){
+            var response = answers(questions);
+        }
 
     }
+    
+    
 
 
-    showQuestions(questions, triviaContainer);
 
 
-
-    submitButton.onclick = function(){
-
-        showResults(questions, triviaContainer, resultsContainer);
-
-    }
+    
 
         
         
