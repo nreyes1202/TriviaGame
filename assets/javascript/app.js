@@ -12,21 +12,12 @@ $(document).ready(function() {
             correctAnswer: 'b'
         },
         {
-            question: "In the Superman movies, what newspaper does Clark Kent Work for?",
-            answers: {
-                a: 'The Daily Planet',
-                b: 'The Daily Prophet',
-                c: 'The Daily Bugle',
-            }
-            correctAnswer: 'a'
-        },
-        {
             question: "In the movie The Wizard of Oz, what did the Scarecrow want from the wizard?",
             answers: {
-                a: 'a brain',
-                b: 'a heart',
+                a: 'brain',
+                b: 'heart',
                 c: 'courage',
-            }
+            },
             correctAnswer: 'a'
         },
         {
@@ -35,8 +26,17 @@ $(document).ready(function() {
                 a: 'Singing in the Rain',
                 b: 'Monkey Business',
                 c: 'Jack and the Beanstalk',
-            }
+            },
             correctAnswer: 'a'
+        },
+        {
+            question: "In the Superman movies, what newspaper does Clark Kent Work for?",
+            answers: {
+                a: 'The Daily Prophet',
+                b: 'The Daily Planet',
+                c: 'The Daily Bugle',
+            },
+            correctAnswer: 'b'
         },
         {
             question: "Which movie is famous for the quote 'There's no crying in baseball!'",
@@ -44,7 +44,7 @@ $(document).ready(function() {
                 a: 'The Sandlot',
                 b: 'Rookie of the Year',
                 c: 'A League of Their Own',
-            }
+            },
             correctAnswer: 'c'
         },
         {
@@ -53,25 +53,64 @@ $(document).ready(function() {
                 a: 'Beauty and the Beast',
                 b: 'Toy Story',
                 c: 'Aladdin',
-            }
+            },
             correctAnswer: 'b'
         }
     ];
 
-    var countDown = 60000;
-    var correct = 0;
-    var incorrect = 0;
-    var unanswered = 0;
+    //var countDown = 60000;
+    //var correct = 0;
+    //var incorrect = 0;
+    //var unanswered = 0;
 
-    function showQuestion (){
-        $('#trivia-questions').html(question[key].triviaquestions);
+    var startButton = document.getElementById('start-btn');
+    var nextButton = document.getElementById('next-btn');
+    var questionContainerElement = document.getElementById('question-container');
+    var questionElement = document.getElementById('question');
+    var answerElement = document.getElementById('answer-buttons');
 
-        for (var i = 0; i < question[key].answers.length; i++){
-            var response = answers(questions);
-        }
+    let shuffledTriviaQuestions, currentTriviaQuestions
 
-    }
+    startButton.addEventListener('click', startTrivia);
+
+    function startTrivia() {
+        startButton.classList.add('hide');
+        shuffledTriviaQuestions = questions.sort(() => Math.random);
+        currentTriviaQuestions = 0;
+        questionContainerElement.classList.remove('hide');
+        setNextQuestion()
+    };
+
+    function setNextQuestion() {
+        showQuestion(shuffledTriviaQuestions[currentTriviaQuestions])
+        resetState()
+    };
     
+    function showQuestion(question) {
+        questionElement.innerText = question.question;
+        question.answers.forEach(answer => {
+            var button = document.createElement('button');
+            button.innerText = answer.text;
+            button.classList.add('btn');
+
+            if (answer.correct) {
+                button.dataset.correct = answer.correct
+            }
+            button.addEventListener('click', selectAnswer)
+            answerButtonsElement.appendChild(button)
+
+        })
+    };
+
+        function resetState() {
+            nextButton.classList.add('hide');
+            while(answerButtonsElement.firstChild) {
+                answerButtonsElement.removeChild(answerButtonsElement.firstChild)
+            }
+        }
+    //function selectAnswer() {
+
+    //}
     
 
 
